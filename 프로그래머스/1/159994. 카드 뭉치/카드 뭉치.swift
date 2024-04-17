@@ -1,11 +1,9 @@
 import Foundation
 
-func solution(_ cards1:[String], _ cards2:[String], _ goal:[String]) -> String {
-    
+func solution(_ cards1:[String], _ cards2:[String], _ goal:[String]) -> String { 
     var index1: Int = 0
     var index2: Int = 0
-    
-    var result: [String] = []
+
     for i in 0..<goal.count {
         if index1 < cards1.count && goal[i] == cards1[index1] {
             index1 += 1
