@@ -1,18 +1,14 @@
 import Foundation
 
 func solution(_ n:Int) -> [Int] {
-    var divisor : Int = 2
-    var tmp : Int = n
-    var result = Set<Int>()
-    var sortedResult = [Int]()
-    while tmp != 1 {
-        if tmp % divisor != 0 {
-            divisor += 1
-        } else if tmp % divisor == 0 {
-            tmp = tmp / divisor
-            result.insert(divisor)
+    var result: [Int] = []
+    var temp = n
+    for i in 2...temp {
+        while temp % i == 0 {
+            temp = temp / i
+            result.append(i)
         }
     }
-    sortedResult = Array(result).sorted()
-    return sortedResult
+
+    return Array(Set(result)).sorted()
 }
